@@ -9,6 +9,8 @@ env:
     - DB_ENGINE=mysql DB_HOST=localhost DB_USERNAME=root
     - DB_ENGINE=pgsql DB_HOST=localhost DB_USERNAME=postgres
 services:
+  - mysql
+  - postgresql
   - docker
 before_install:
   - if [ $DB_ENGINE = 'mysql' ]; then mysql -u root -e 'CREATE DATABASE elasticsearch;'; fi
