@@ -1,14 +1,14 @@
-# Elasticsearch
+# Elasticsearch Plugin
 
 ![license](https://img.shields.io/badge/license-MIT-brightGreen.svg)
 [![build](https://travis-ci.org/originphp/elasticsearch.svg?branch=master)](https://travis-ci.org/originphp/elasticsearch)
 [![coverage](https://coveralls.io/repos/github/originphp/elasticsearch/badge.svg?branch=master)](https://coveralls.io/github/originphp/elasticsearch?branch=master)
 
-If you need to improve performance of your application by moving search queries to Elasticsearch or implement more advanced searching, OriginPHP makes it ultra simple to implement Elasticsearch in your web application.
+If you need to improve the performance of your application by moving search queries to Elasticsearch or implement more advanced searching, OriginPHP makes it ultra simple to implement Elasticsearch in your web application.
 
 ## Installation
 
-To install this package
+To install this plugin
 
 ```linux
 $ composer require originphp/elasticsearch
