@@ -1,0 +1,37 @@
+{
+    "name": "originphp/elasticsearch",
+    "description": "OriginPHP Elasticsearch",
+    "type": "library",
+    "keywords": [
+        "originphp",
+        "elasticsearch"
+    ],
+    "homepage": "https://www.originphp.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jamiel Sharief",
+            "email": "js@originphp.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Elasticsearch\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Elasticsearch\\Test\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.2.0",
+        "originphp/configurable": "^1.0",
+        "originphp/framework": "2.x",
+        "originphp/plugin-installer": "^1.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+    "minimum-stability": "dev"
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+    colors="true"
+    processIsolation="false"
+    stopOnFailure="false"
+    bootstrap="./config/bootstrap.php"
+    backupGlobals="true"
+    >
+    <testsuites>
+        <testsuite name="OriginPHP Elasticsearch">
+            <directory>./tests/TestCase</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./src/</directory>
+        </whitelist>
+    </filter>
+    <php>
+       <const name="PHPUNIT" value="true"/>
+       <env name="ORIGIN_ENV" value="test"/>
+
+         <!-- # Database Settings mysql/pgsql
+            <env name="DB_HOST" value="localhost" />
+            <env name="DB_USERNAME" value="root" />
+            <env name="DB_PASSWORD" value="root" />
+            <env name="DB_ENGINE" value="mysql" />
+            <env name="ELASTICSEARCH_HOST" value="localhost"/>
+        -->
+    </php>
+    <listeners>
+        <listener
+            class="Origin\TestSuite\OriginTestListener"
+        file ="./vendor/originphp/framework/src/TestSuite/OriginTestListener.php"
+        >
+    </listener>
+	</listeners>
+</phpunit>
