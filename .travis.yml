@@ -4,9 +4,21 @@ php:
   - 7.3
   - 7.4snapshot
 dist: xenial
+env:
+  matrix:
+    - DB_ENGINE=mysql DB_HOST=localhost DB_USERNAME=root
+    - DB_ENGINE=pgsql DB_HOST=localhost DB_USERNAME=postgres
+services:
+  - docker
+before_install:
+  - if [ $DB_ENGINE = 'mysql' ]; then mysql -u root -e 'CREATE DATABASE elasticsearch;'; fi
+  - if [ $DB_ENGINE = 'pgsql' ]; then psql -c 'CREATE DATABASE elasticsearch;' -U postgres; fi
+  - docker pull docker.elastic.co/elasticsearch/elasticsearch:7.3.0
+  - docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.3.0
 before_script:
   - composer install --prefer-source --no-interaction
 script:
+  - sleep 10
   - vendor/bin/phpunit --coverage-clover=clover.xml
 after_script:
   - wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.1.0/php-coveralls.phar
