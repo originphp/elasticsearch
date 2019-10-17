@@ -13,12 +13,6 @@ Config::write('App.namespace', 'Elasticsearch');
 
 use Origin\Model\ConnectionManager;
 use Elasticsearch\Elasticsearch;
-use Origin\Log\Log;
-
-Log::config('default', [
-    'engine' => 'File',
-    'file' => LOGS . '/application.log'
-]);
 
 ConnectionManager::config('test', [
     'host' => env('DB_HOST', '127.0.0.1'),
@@ -27,7 +21,6 @@ ConnectionManager::config('test', [
     'password' => env('DB_PASSWORD'),
     'engine' => env('DB_ENGINE', 'mysql')
 ]);
-
 
 Elasticsearch::config('test', [
     'host' => env('ELASTICSEARCH_HOST', '127.0.0.1'),
