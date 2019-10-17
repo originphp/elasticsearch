@@ -14,7 +14,7 @@ To install this plugin
 $ composer require originphp/elasticsearch
 ```
 
-> To use the Elasticsearch features you will need to install Elasticsearch 7.0 or greater.
+> To use the Elasticsearch features you will need to install Elasticsearch 7.0 or greater. At the bottom of this text there is information how to do this with Docker.
 
 ## Configuration
 
