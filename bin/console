@@ -17,4 +17,5 @@ namespace Generate\Console;
 
 require dirname(__DIR__) .  '/config/bootstrap.php';
 
-(new Application())->dispatch($argv);
+$exitCode = (new Application())->dispatch($argv);
+exit($exitCode);
